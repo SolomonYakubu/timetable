@@ -81,15 +81,18 @@ export default function Venues() {
 								padding: "5px",
 							}}
 						>
-							{venues != 0
-								? revVenues.map((item, index) => (
-										<tr style={{ width: "100%" }}>
-											<td>{venues.length - index}</td>
-											<td>{item.name}</td>
-											<td>{item.capacity}</td>
-										</tr>
-								  ))
-								: null}
+							{
+								//eslint-disable-next-line
+								venues != 0
+									? revVenues.map((item, index) => (
+											<tr style={{ width: "100%" }}>
+												<td>{venues.length - index}</td>
+												<td>{item.name}</td>
+												<td>{item.capacity}</td>
+											</tr>
+									  ))
+									: null
+							}
 						</tbody>
 					</table>
 				</div>

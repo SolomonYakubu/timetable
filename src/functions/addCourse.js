@@ -11,7 +11,7 @@ const addCourse = (lecturer, course, population) => {
 		localStorage.setItem("data", JSON.stringify(data));
 	} else {
 		data = JSON.parse(localStorage.getItem("data"));
-
+		//eslint-disable-next-line
 		if (data.lecturers.filter((item) => item.lecturer === lecturer) != 0) {
 			const lecturerArray = data.lecturers.map((item) => item.lecturer);
 			const index = lecturerArray.indexOf(lecturer);

@@ -1,8 +1,5 @@
-import { useState, useEffect } from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
-import Table from "./pages/Table";
 
 function App() {
 	return (

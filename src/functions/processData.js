@@ -19,8 +19,10 @@ if (localStorage.getItem("data")) {
 		let course = data.lecturers[i].courses;
 		for (let j = 0; j < course.length; j++) {
 			// console.log(course[j].course.split(" ")[0][0]);
+			//eslint-disable-next-line
 			if (course[j].course.split(" ")[1][0] == "1") {
 				level1.push(course[j]);
+				//eslint-disable-next-line
 			} else if (course[j].course.split(" ")[1][0] == "2") {
 				level2.push(course[j]);
 			} else {

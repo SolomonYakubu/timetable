@@ -81,62 +81,65 @@ export default function Courses({ setSelected }) {
 							background: "#fff",
 						}}
 					>
-						{lecturers != 0
-							? revLecturers.map((obj, index) => (
-									<tbody
-										style={{
-											textAlign: "center",
-											padding: "5px",
-										}}
-									>
-										<tr>
-											<td
-												colSpan={2}
-												style={{
-													background: "#1a1a1a",
-													color: "#fff",
-													borderRadius: 0,
-													fontSize: "24px",
-													fontFamily: "Buenard",
-													padding: "5px",
-													margin: 0,
-												}}
-											>
-												{lecturers.length - index}
-											</td>
-										</tr>
-
-										<tr>
-											<td
-												colSpan={2}
-												style={{
-													background: "#1a1a1a",
-													color: "#fff",
-													borderRadius: 0,
-													fontSize: "18px",
-													fontFamily: "Buenard",
-												}}
-											>
-												{obj.lecturer}
-											</td>
-										</tr>
-										{obj.courses.map((item, index) => (
-											<tr style={{ width: "100%" }}>
-												<td>{item.course}</td>
-												<td>{item.population}</td>
+						{
+							//eslint-disable-next-line
+							lecturers != 0
+								? revLecturers.map((obj, index) => (
+										<tbody
+											style={{
+												textAlign: "center",
+												padding: "5px",
+											}}
+										>
+											<tr>
+												<td
+													colSpan={2}
+													style={{
+														background: "#1a1a1a",
+														color: "#fff",
+														borderRadius: 0,
+														fontSize: "24px",
+														fontFamily: "Buenard",
+														padding: "5px",
+														margin: 0,
+													}}
+												>
+													{lecturers.length - index}
+												</td>
 											</tr>
-										))}
-										<tr style={{ width: "100%" }}>
-											<td
-												colSpan={2}
-												style={{ background: "#a9a9a9", borderRadius: 0 }}
-											>
-												{" "}
-											</td>
-										</tr>
-									</tbody>
-							  ))
-							: null}
+
+											<tr>
+												<td
+													colSpan={2}
+													style={{
+														background: "#1a1a1a",
+														color: "#fff",
+														borderRadius: 0,
+														fontSize: "18px",
+														fontFamily: "Buenard",
+													}}
+												>
+													{obj.lecturer}
+												</td>
+											</tr>
+											{obj.courses.map((item, index) => (
+												<tr style={{ width: "100%" }}>
+													<td>{item.course}</td>
+													<td>{item.population}</td>
+												</tr>
+											))}
+											<tr style={{ width: "100%" }}>
+												<td
+													colSpan={2}
+													style={{ background: "#a9a9a9", borderRadius: 0 }}
+												>
+													{" "}
+												</td>
+											</tr>
+										</tbody>
+								  ))
+								: null
+						}
 					</table>
 				</div>
 			</form>
