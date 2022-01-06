@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"name": "EnergyMeter",
+			"path": "..\\..\\..\\..\\..\\Documents\\PlatformIO\\Projects\\EnergyMeter"
+		}
+	],
+	"settings": {}
+}
