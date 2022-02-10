@@ -11,9 +11,9 @@ export default function Venues() {
       ? JSON.parse(localStorage.getItem("data")).venues
       : []
   );
-  const [revVenues, setRevVenues] = useState(venues.reverse());
+  const [revVenues, setRevVenues] = useState(venues);
 
-  const runAddVenue = useCallback((venue, capacity) => {
+  const runAddVenue = useCallback(() => {
     if (!venue || !capacity) {
       return Swal.fire("error", "Fields cannot be empty", "error");
     }
@@ -25,7 +25,7 @@ export default function Venues() {
     setVenues(JSON.parse(localStorage.getItem("data")).venues);
     setVenue("");
     setCapacity("");
-  }, []);
+  }, [venue, capacity]);
   useEffect(() => {
     setRevVenues(venues.reverse());
     return () => venues.reverse();
@@ -66,7 +66,7 @@ export default function Venues() {
               className="input button"
               onClick={(e) => {
                 e.preventDefault();
-                runAddVenue(venue, capacity);
+                runAddVenue();
               }}
             >
               Add Venue

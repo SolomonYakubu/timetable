@@ -14,17 +14,14 @@ export default function Courses({ setSelected }) {
   );
   const [revLecturers, setRevLecturers] = useState(lecturers.reverse());
 
-  const runAddCourse = useCallback(
-    (venue, capacity) => {
-      if (!population || !course || !lecturer) {
-        return Swal.fire("error", "Fields cannot be empty", "error");
-      }
-      addCourse(lecturer, course, population);
+  const runAddCourse = useCallback(() => {
+    if (!population || !course || !lecturer) {
+      return Swal.fire("error", "Fields cannot be empty", "error");
+    }
+    addCourse(lecturer, course, population);
 
-      setLecturers(JSON.parse(localStorage.getItem("data")).lecturers);
-    },
-    [course, lecturer, population]
-  );
+    setLecturers(JSON.parse(localStorage.getItem("data")).lecturers);
+  }, [course, lecturer, population]);
   useEffect(() => {
     setRevLecturers(lecturers.reverse());
     return () => lecturers.reverse();
@@ -70,7 +67,7 @@ export default function Courses({ setSelected }) {
               className="input button"
               onClick={(e) => {
                 e.preventDefault();
-                runAddCourse(lecturer, course, population);
+                runAddCourse();
               }}
               style={{ marginBottom: "30px" }}
             >
