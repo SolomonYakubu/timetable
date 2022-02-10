@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, useCallback } from "react";
 import addVenue from "../functions/addVenue";
-
+import Swal from "sweetalert2";
 export default function Venues() {
   const [venue, setVenue] = useState("");
   const [capacity, setCapacity] = useState("");
@@ -15,11 +15,11 @@ export default function Venues() {
 
   const runAddVenue = useCallback((venue, capacity) => {
     if (!venue || !capacity) {
-      return;
+      return Swal.fire("error", "Fields cannot be empty", "error");
     }
     const runFunction = addVenue(venue, capacity);
     if (runFunction === -1) {
-      return;
+      return Swal.fire("error", "Venue Already Exist", "error");
     }
 
     setVenues(JSON.parse(localStorage.getItem("data")).venues);

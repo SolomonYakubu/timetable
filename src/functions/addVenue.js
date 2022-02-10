@@ -9,7 +9,8 @@ const addVenue = (venue, capacity) => {
   } else {
     if (
       JSON.parse(localStorage.getItem("data"))
-        .venues.map((item) => item.name === venue)
+        //eslint-disable-next-line
+        .venues.map((item) => item.name.toLowerCase() === venue.toLowerCase())
         .includes(true)
     ) {
       return -1;

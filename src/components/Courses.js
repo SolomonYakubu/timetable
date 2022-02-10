@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect, useCallback } from "react";
 import addCourse from "../functions/addCourse";
+import Swal from "sweetalert2";
 export default function Courses({ setSelected }) {
   const [lecturer, setLecturer] = useState("");
   const [course, setCourse] = useState("");
@@ -16,7 +17,7 @@ export default function Courses({ setSelected }) {
   const runAddCourse = useCallback(
     (venue, capacity) => {
       if (!population || !course || !lecturer) {
-        return;
+        return Swal.fire("error", "Fields cannot be empty", "error");
       }
       addCourse(lecturer, course, population);
 

@@ -46,13 +46,31 @@ export default function Dashboard() {
                 padding: 0,
               }}
             >
-              <input
-                type="file"
-                onChange={handleChange}
-                accept=".json"
-                avatar="Upload data"
-                className="file"
-              />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "Flamenco",
+                    fontSize: "18px",
+                    marginBottom: "5px",
+                  }}
+                >
+                  Upload data
+                </div>
+                <input
+                  type="file"
+                  onChange={handleChange}
+                  accept=".json"
+                  avatar="Upload data"
+                  className="file"
+                />
+              </div>
 
               <button
                 onClick={() => generateTable()}
