@@ -44,6 +44,7 @@ export default function Dashboard() {
                 alignSelf: "flex-end",
                 width: "100%",
                 padding: 0,
+                flexWrap: "wrap",
               }}
             >
               <div
@@ -84,7 +85,7 @@ export default function Dashboard() {
                   fontFamily: "Flamenco",
                   // marginRight:"80px",
                   alignSelf: "flex-end",
-                  margin: 0,
+                  marginTop: "5px",
                 }}
               >
                 Generate
@@ -98,6 +99,7 @@ export default function Dashboard() {
                 alignSelf: "flex-end",
                 width: "100%",
                 padding: 0,
+                flexWrap: "wrap",
               }}
             >
               <button
