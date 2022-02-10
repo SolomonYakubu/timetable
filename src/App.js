@@ -4,7 +4,7 @@ import Dashboard from "./pages/Dashboard";
 function App() {
 	return (
 		<div className="App">
-			<div className="container">
+			{/* <div className="container"> */}
 				{/* <Router>
 				{/* <Route exact path="/">
 					<Table />
@@ -13,7 +13,7 @@ function App() {
 				<Dashboard />
 				{/* </Route>
 			</Router> */}
-			</div>
+			{/* </div> */}
 		</div>
 	);
 }
